@@ -13,8 +13,8 @@ local function cleanup_fn(item: any)
 	elseif tof == 'RBXScriptConnection' then
 		item:Disconnect()
 	elseif tof == 'table' then
-		if item.clear then
-			item.clear()
+		if item.delete then
+			item.delete()
 		else
 			for k, j in item do
 				cleanup_fn(j)
