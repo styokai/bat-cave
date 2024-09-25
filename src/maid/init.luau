@@ -3,6 +3,7 @@
 local function cleanup(scope: {any})
 	for i = #scope, 1, -1 do
 		local item = scope[i]
+		scope[i] = nil
 		local userdata = typeof(item)
 		if userdata == 'RBXScriptConnection' then
 			item:Disconnect()
